@@ -571,7 +571,6 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
   gap: 12px;
 }
 
@@ -589,6 +588,8 @@ ul { list-style: none; }
 }
 .footer__text a { color: var(--primary); font-weight: 600; }
 .footer__text a:hover { color: var(--primary-mid); }
+
+.footer__right { display: flex; align-items: center; gap: 12px; }
 
 /* ═══════════════════════════════════════════
    RESPONSIVE
