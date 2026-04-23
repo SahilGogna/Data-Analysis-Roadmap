@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Analyst Roadmap — ORU</title>
+  <meta name="description" content="The step-by-step path from zero to job-ready data analyst in 5–6 months. All free." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;0,9..40,700&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Progress bar -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- ══════════════ NAV ══════════════ -->
+  <nav class="nav" id="nav">
+    <a href="https://joinoru.com" target="_blank" rel="noopener" class="nav__logo">
+      <img src="assets/logo.svg" alt="ORU" />
+    </a>
+    <a href="https://github.com/SahilGogna/Study-Resources" target="_blank" rel="noopener" class="nav__cta">
+      Free Resources →
+    </a>
+  </nav>
+
+  <!-- ══════════════ HERO ══════════════ -->
+  <section class="hero">
+    <div class="hero__inner">
+      <p class="hero__label">The Roadmap · 5–6 Months · All Free</p>
+
+      <h1>
+        From Zero to<br />
+        <span class="gradient-text">Data Analyst</span>
+      </h1>
+
+      <p class="hero__sub">
+        One path. Seven checkpoints. Everything you need to go from beginner to hired.
+      </p>
+
+      <a href="#roadmap" class="hero__cta">
+        <span>Begin the Journey</span>
+        <svg class="hero__cta-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ══════════════ ROADMAP ══════════════ -->
+  <section class="roadmap" id="roadmap">
+    <div class="roadmap__container" id="roadmapContainer">
+
+      <!-- SVG path layer — built by script.js -->
+      <svg class="roadmap__svg" id="roadmapSvg" aria-hidden="true">
+        <defs>
+          <!-- Glow filter for path -->
+          <filter id="path-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+            <feFlood flood-color="#7622D7" flood-opacity="0.7" result="color" />
+            <feComposite in="color" in2="blur" operator="in" result="shadow" />
+            <feMerge>
+              <feMergeNode in="shadow" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+
+          <!-- Purple gradient along path -->
+          <linearGradient id="path-grad" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0%"   stop-color="#B382FD" />
+            <stop offset="50%"  stop-color="#7622D7" />
+            <stop offset="100%" stop-color="#460078" />
+          </linearGradient>
+        </defs>
+
+        <!-- Glow copy of the path -->
+        <path id="pathGlow" class="path-glow-layer"
+          fill="none"
+          stroke="url(#path-grad)"
+          filter="url(#path-glow)" />
+
+        <!-- Main drawn path -->
+        <path id="pathMain" class="path-main-layer"
+          fill="none"
+          stroke="url(#path-grad)" />
+
+        <!-- Animated flow dots (always on, subtle) -->
+        <path id="pathFlow" class="path-flow-layer"
+          fill="none"
+          stroke="#B382FD" />
+
+        <!-- Checkpoint dots group — filled by JS -->
+        <g id="pathNodes"></g>
+      </svg>
+
+      <!-- Traveler dot -->
+      <div class="path-traveler" id="pathTraveler"></div>
+
+      <!-- Section header -->
+      <div class="roadmap__header fade-up">
+        <p class="section-label">The Path</p>
+        <h2>7 Checkpoints. 5–6 Months.</h2>
+        <p>Follow the trail. Each node links to free resources on GitHub.</p>
+      </div>
+
+      <!-- ── PHASE 1: Excel ───────────────────── -->
+      <div class="phase phase--right" data-phase="1">
+        <div class="phase__node-col">
+          <div class="phase__node" id="node1">
+            <span class="phase__num">01</span>
+          </div>
+        </div>
+        <div class="phase__card" id="card1">
+          <div class="phase__header">
+            <span class="phase__tag">Weeks 1–3</span>
+            <h3>Excel</h3>
+          </div>
+          <p class="phase__desc">The tool every analyst uses on day one. Nail the core formulas, pivots, and dashboards before anything else.</p>
+          <ul class="phase__topics">
+            <li>SUM, AVERAGE, COUNTIF, IF statements</li>
+            <li>Pivot tables</li>
+            <li>VLOOKUP &amp; INDEX MATCH</li>
+            <li>Conditional formatting &amp; basic dashboards</li>
+          </ul>
+          <div class="phase__resources">
+            <a href="https://github.com/SahilGogna/Study-Resources/blob/main/analysis/excel-roadmap.md"
+               target="_blank" rel="noopener" class="chip">Excel Roadmap ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── PHASE 2: SQL ─────────────────────── -->
+      <div class="phase phase--left" data-phase="2">
+        <div class="phase__card" id="card2">
+          <div class="phase__header">
+            <span class="phase__tag">Weeks 3–8</span>
+            <h3>SQL</h3>
+          </div>
+          <p class="phase__desc">The #1 skill in every data analyst job posting. Fundamentals first, then window functions that show up in every interview.</p>
+          <ul class="phase__topics">
+            <li>SELECT, WHERE, GROUP BY, JOINs</li>
+            <li>Subqueries &amp; CTEs</li>
+            <li>ROW_NUMBER, RANK, LAG, LEAD</li>
+            <li>75 practice questions + real datasets</li>
+          </ul>
+          <div class="phase__resources">
+            <a href="https://github.com/SahilGogna/Study-Resources/blob/main/analysis/sql.md"
+               target="_blank" rel="noopener" class="chip">SQL Roadmap ↗</a>
+            <a href="https://github.com/SahilGogna/Study-Resources/blob/main/analysis/sql-75-questions.md"
+               target="_blank" rel="noopener" class="chip">75 Questions ↗</a>
+            <a href="https://github.com/SahilGogna/Study-Resources/blob/main/analysis/sql-75-datasets.sql"
+               target="_blank" rel="noopener" class="chip">Datasets ↗</a>
+          </div>
+        </div>
+        <div class="phase__node-col">
+          <div class="phase__node" id="node2">
+            <span class="phase__num">02</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── PHASE 3: Python ─────────────────── -->
+      <div class="phase phase--right" data-phase="3">
+        <div class="phase__node-col">
+          <div class="phase__node" id="node3">
+            <span class="phase__num">03</span>
+          </div>
+        </div>
+        <div class="phase__card" id="card3">
+          <div class="phase__header">
+            <span class="phase__tag">Weeks 6–11</span>
+            <h3>Python</h3>
+          </div>
+          <p class="phase__desc">How you scale your analysis beyond spreadsheets. Learn foundations, then move straight into Pandas — the library you'll use every single day.</p>
+          <ul class="phase__topics">
+            <li>Variables, loops, functions, conditionals</li>
+            <li>Jupyter Notebook setup</li>
+            <li>Pandas: read, filter, groupby, merge</li>
+            <li>matplotlib &amp; seaborn basics</li>
+          </ul>
+          <div class="phase__resources">
+            <a href="https://github.com/SahilGogna/Study-Resources/blob/main/python/Python_Roadmap.md"
+               target="_blank" rel="noopener" class="chip">Python Roadmap ↗</a>
+            <a href="https://github.com/SahilGogna/Study-Resources/blob/main/python/Python_Foundations_Checklist.md"
+               target="_blank" rel="noopener" class="chip">Checklist ↗</a>
+            <a href="https://github.com/SahilGogna/Study-Resources/blob/main/python/python-50-question-easy.md"
+               target="_blank" rel="noopener" class="chip">50 Problems ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── PHASE 4: Visualization ──────────── -->
+      <div class="phase phase--left" data-phase="4">
+        <div class="phase__card" id="card4">
+          <div class="phase__header">
+            <span class="phase__tag">Weeks 9–13</span>
+            <h3>Data Visualization</h3>
+          </div>
+          <p class="phase__desc">Pick one — Tableau or Power BI. Clean, story-driven dashboards beat flashy ones every time. Learn the one that's on more local job postings.</p>
+          <ul class="phase__topics">
+            <li>Connecting to data sources</li>
+            <li>Bar, line, area &amp; scatter charts</li>
+            <li>Dashboard design principles</li>
+            <li>Filters, drill-downs &amp; publishing</li>
+          </ul>
+          <div class="phase__resources">
+            <a href="https://github.com/SahilGogna/Study-Resources/blob/main/analysis/data-visualization.md"
+               target="_blank" rel="noopener" class="chip">Viz Guide ↗</a>
+          </div>
+        </div>
+        <div class="phase__node-col">
+          <div class="phase__node" id="node4">
+            <span class="phase__num">04</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── PHASE 5: Statistics ─────────────── -->
+      <div class="phase phase--right" data-phase="5">
+        <div class="phase__node-col">
+          <div class="phase__node" id="node5">
+            <span class="phase__num">05</span>
+          </div>
+        </div>
+        <div class="phase__card" id="card5">
+          <div class="phase__header">
+            <span class="phase__tag">Weeks 10–13</span>
+            <h3>Statistics Basics</h3>
+          </div>
+          <p class="phase__desc">You don't need a stats degree — just enough to understand what the numbers mean and draw the right conclusions from your data.</p>
+          <ul class="phase__topics">
+            <li>Mean, median, standard deviation</li>
+            <li>Correlation vs causation</li>
+            <li>Hypothesis testing &amp; p-values</li>
+            <li>Normal distribution</li>
+          </ul>
+          <div class="phase__resources">
+            <span class="chip chip--dim">Full framework in Video 2 →</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── PHASE 6: Portfolio ──────────────── -->
+      <div class="phase phase--left" data-phase="6">
+        <div class="phase__card" id="card6">
+          <div class="phase__header">
+            <span class="phase__tag">Months 3–4</span>
+            <h3>Portfolio</h3>
+          </div>
+          <p class="phase__desc">2–3 projects on GitHub is enough. Take a messy real-world dataset, ask a business question, and deliver a clear answer with a recommendation.</p>
+          <ul class="phase__topics">
+            <li>Real datasets: e-commerce, HR, finance</li>
+            <li>End-to-end: question → insight → action</li>
+            <li>GitHub with clean READMEs</li>
+            <li>Problem · Approach · Key Findings</li>
+          </ul>
+          <div class="phase__resources">
+            <a href="https://github.com/SahilGogna/Study-Resources/tree/main/project-ideas"
+               target="_blank" rel="noopener" class="chip">Project Ideas ↗</a>
+            <a href="https://github.com/SahilGogna/Study-Resources/blob/main/python/PythonProjects.md"
+               target="_blank" rel="noopener" class="chip">Python Projects ↗</a>
+          </div>
+        </div>
+        <div class="phase__node-col">
+          <div class="phase__node" id="node6">
+            <span class="phase__num">06</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── PHASE 7: Storytelling + Job Hunt ── -->
+      <div class="phase phase--right" data-phase="7">
+        <div class="phase__node-col">
+          <div class="phase__node" id="node7">
+            <span class="phase__num">07</span>
+          </div>
+        </div>
+        <div class="phase__card" id="card7">
+          <div class="phase__header">
+            <span class="phase__tag">Months 4–6</span>
+            <h3>Storytelling &amp; Job Hunt</h3>
+          </div>
+          <p class="phase__desc">Technical skills get you the interview. Communication and preparation get you the offer. Then: apply, iterate, land the job.</p>
+          <ul class="phase__topics">
+            <li>What → Why → What to do framework</li>
+            <li>Resume &amp; cover letter (ATS-friendly)</li>
+            <li>LinkedIn optimization</li>
+            <li>SQL interview + STAR behavioral method</li>
+          </ul>
+          <div class="phase__resources">
+            <a href="https://github.com/SahilGogna/Study-Resources/blob/main/resume-cl/resume-guide.md"
+               target="_blank" rel="noopener" class="chip">Resume Guide ↗</a>
+            <a href="https://github.com/SahilGogna/Study-Resources/blob/main/analysis/data-interview-guide.md"
+               target="_blank" rel="noopener" class="chip">Interview Guide ↗</a>
+            <a href="https://github.com/SahilGogna/Study-Resources/blob/main/portfolio/linkedin.md"
+               target="_blank" rel="noopener" class="chip">LinkedIn Guide ↗</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /roadmapContainer -->
+  </section>
+
+  <!-- ══════════════ CRITERIA ══════════════ -->
+  <section class="criteria">
+    <div class="criteria__inner">
+      <p class="section-label fade-up">The Destination</p>
+      <h2 class="fade-up">What "Job-Ready" Actually Means</h2>
+
+      <div class="criteria__grid">
+        <div class="criteria__item">
+          <div class="criteria__icon">🧠</div>
+          <h3>Technical Confidence</h3>
+          <p>Answer SQL live, walk through Python code, explain your analysis approach — without freezing under pressure.</p>
+        </div>
+        <div class="criteria__item">
+          <div class="criteria__icon">📂</div>
+          <h3>2–3 Real Projects</h3>
+          <p>Real datasets. Business questions. End-to-end work on GitHub with clear READMEs and key findings.</p>
+        </div>
+        <div class="criteria__item">
+          <div class="criteria__icon">🗣️</div>
+          <h3>Clear Communication</h3>
+          <p>Explain what you found, why it matters, and what to do next — to someone who has never seen a spreadsheet.</p>
+        </div>
+      </div>
+
+      <a href="https://github.com/SahilGogna/Study-Resources" target="_blank" rel="noopener" class="cta-btn">
+        Get All Free Resources →
+      </a>
+    </div>
+  </section>
+
+  <!-- ══════════════ FOOTER ══════════════ -->
+  <footer class="footer">
+    <div class="footer__brand">
+      <img src="assets/logo.svg" alt="ORU" />
+    </div>
+    <p class="footer__text">
+      Built by <a href="https://joinoru.com" target="_blank" rel="noopener">ORU</a>
+      &amp;
+      <a href="https://youtube.com/@GognaSahil" target="_blank" rel="noopener">@GognaSahil</a>
+      · All resources are free
+    </p>
+    <p class="footer__copy">© 2026 ORU</p>
+  </footer>
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
