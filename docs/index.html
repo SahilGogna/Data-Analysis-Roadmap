@@ -146,22 +146,22 @@
               <ellipse cx="44" cy="208" rx="12" ry="4" fill="#1E3A8A" />
             </g>
 
-            <!-- Python icon: two overlapping circles (blue + yellow) -->
-            <g class="line-icon" style="pointer-events:none;">
-              <circle cx="40" cy="281" r="9" fill="#3776AB" />
-              <circle cx="48" cy="289" r="9" fill="#FFD43B" />
-              <text x="44" y="287"
-                style="font-family:Poppins,sans-serif;font-size:8px;font-weight:900;fill:#fff;text-anchor:middle;">Py</text>
-            </g>
-
-            <!-- Viz icon: mini bar chart (3 bars) -->
+            <!-- Viz icon: mini bar chart (3 bars) — now row 3 -->
             <g class="line-icon" style="pointer-events:none;">
               <!-- bar 1 short -->
-              <rect x="32" y="373" width="6" height="10" rx="1" fill="#7C3AED" opacity="0.6" />
+              <rect x="32" y="288" width="6" height="10" rx="1" fill="#7C3AED" opacity="0.6" />
               <!-- bar 2 medium -->
-              <rect x="41" y="368" width="6" height="15" rx="1" fill="#7C3AED" opacity="0.8" />
+              <rect x="41" y="283" width="6" height="15" rx="1" fill="#7C3AED" opacity="0.8" />
               <!-- bar 3 tall -->
-              <rect x="50" y="362" width="6" height="21" rx="1" fill="#7C3AED" />
+              <rect x="50" y="277" width="6" height="21" rx="1" fill="#7C3AED" />
+            </g>
+
+            <!-- Python icon: two overlapping circles (blue + yellow) — now row 4 -->
+            <g class="line-icon" style="pointer-events:none;">
+              <circle cx="40" cy="366" r="9" fill="#3776AB" />
+              <circle cx="48" cy="374" r="9" fill="#FFD43B" />
+              <text x="44" y="372"
+                style="font-family:Poppins,sans-serif;font-size:8px;font-weight:900;fill:#fff;text-anchor:middle;">Py</text>
             </g>
 
             <!-- Career icon: briefcase -->
@@ -197,21 +197,21 @@
             <!-- Transfer: SQL → Python -->
             <path class="transfer-line" id="connSP" d="M 630 200 C 630 242, 655 285, 655 285" />
 
-            <!-- PYTHON glow -->
-            <path class="transit-line-glow" id="linePythonGlow" d="M 655 285 L 960 285" stroke="#3776AB" />
+            <!-- VIZ+STATS glow — now row 3 -->
+            <path class="transit-line-glow" id="lineVizGlow" d="M 655 285 L 960 285" stroke="#7C3AED" />
 
-            <!-- PYTHON main -->
-            <path class="transit-line" id="linePython" d="M 655 285 L 960 285" stroke="#3776AB"
-              filter="url(#glow-python)" />
+            <!-- VIZ+STATS main — now row 3 -->
+            <path class="transit-line" id="lineViz" d="M 655 285 L 960 285" stroke="#7C3AED" filter="url(#glow-viz)" />
 
-            <!-- Transfer: Python → Viz -->
+            <!-- Transfer: Viz → Python -->
             <path class="transfer-line" id="connPV" d="M 810 285 C 810 327, 810 370, 810 370" />
 
-            <!-- VIZ+STATS glow -->
-            <path class="transit-line-glow" id="lineVizGlow" d="M 810 370 L 1080 370" stroke="#7C3AED" />
+            <!-- PYTHON glow — now row 4 -->
+            <path class="transit-line-glow" id="linePythonGlow" d="M 810 370 L 1080 370" stroke="#3776AB" />
 
-            <!-- VIZ+STATS main -->
-            <path class="transit-line" id="lineViz" d="M 810 370 L 1080 370" stroke="#7C3AED" filter="url(#glow-viz)" />
+            <!-- PYTHON main — now row 4 -->
+            <path class="transit-line" id="linePython" d="M 810 370 L 1080 370" stroke="#3776AB"
+              filter="url(#glow-python)" />
 
             <!-- Transfer: Viz → Career -->
             <path class="transfer-line" id="connVC" d="M 960 370 C 960 412, 960 455, 960 455" />
@@ -259,13 +259,13 @@
               <text class="station__time" x="550" y="217" fill="#1E40AF">Wk 3–5</text>
             </g>
 
-            <!-- Branch node SQL → Python -->
+            <!-- Branch node SQL → Viz -->
             <g class="station station--transfer" data-station="s2" tabindex="0" role="button"
-              aria-label="JOINs and Aggregation — branches to Python">
+              aria-label="JOINs and Aggregation — branches to Viz">
               <circle class="station__ring" cx="665" cy="200" r="20" stroke="#1E40AF" />
               <circle class="station__dot" cx="665" cy="200" r="11" fill="#1E40AF" />
               <text class="station__label" x="665" y="185">JOINs &amp; Aggregation</text>
-              <text class="station__time" x="665" y="218" fill="#1E40AF">Wk 5–6 ⇒ Python</text>
+              <text class="station__time" x="665" y="218" fill="#1E40AF">Wk 5–6 ⇒ Viz</text>
             </g>
 
             <g class="station" data-station="s3" tabindex="0" role="button" aria-label="Window Functions">
@@ -275,52 +275,52 @@
               <text class="station__time" x="780" y="217" fill="#1E40AF">Wk 6–8</text>
             </g>
 
-            <!-- ── PYTHON LINE stations ────────── -->
+            <!-- ── PYTHON LINE stations (now row 4) ────────── -->
             <g class="station" data-station="p1" tabindex="0" role="button" aria-label="Python Foundations">
-              <circle class="station__ring" cx="730" cy="285" r="16" stroke="#3776AB" />
-              <circle class="station__dot" cx="730" cy="285" r="8" fill="#3776AB" />
-              <text class="station__label" x="730" y="270">Foundations</text>
-              <text class="station__time" x="730" y="302" fill="#3776AB">Wk 6–8</text>
+              <circle class="station__ring" cx="880" cy="370" r="16" stroke="#3776AB" />
+              <circle class="station__dot" cx="880" cy="370" r="8" fill="#3776AB" />
+              <text class="station__label" x="880" y="355">Foundations</text>
+              <text class="station__time" x="880" y="387" fill="#3776AB">Wk 6–8</text>
             </g>
 
-            <!-- Branch node Python → Viz -->
+            <!-- Branch node Python → Career -->
             <g class="station station--transfer" data-station="p2" tabindex="0" role="button"
-              aria-label="Pandas and Analysis — branches to Visualization">
-              <circle class="station__ring" cx="840" cy="285" r="20" stroke="#3776AB" />
-              <circle class="station__dot" cx="840" cy="285" r="11" fill="#3776AB" />
-              <text class="station__label" x="840" y="270">Pandas &amp; Analysis</text>
-              <text class="station__time" x="840" y="303" fill="#3776AB">Wk 8–11 ⇒ Viz</text>
+              aria-label="Pandas and Analysis — branches to Career">
+              <circle class="station__ring" cx="970" cy="370" r="20" stroke="#3776AB" />
+              <circle class="station__dot" cx="970" cy="370" r="11" fill="#3776AB" />
+              <text class="station__label" x="970" y="354">Pandas &amp; Analysis</text>
+              <text class="station__time" x="970" y="388" fill="#3776AB">Wk 8–11 ⇒ Career</text>
             </g>
 
             <g class="station" data-station="p3" tabindex="0" role="button" aria-label="Portfolio Projects">
-              <circle class="station__ring" cx="940" cy="285" r="16" stroke="#3776AB" />
-              <circle class="station__dot" cx="940" cy="285" r="8" fill="#3776AB" />
-              <text class="station__label" x="940" y="270">Projects</text>
-              <text class="station__time" x="940" y="302" fill="#3776AB">Wk 11+</text>
+              <circle class="station__ring" cx="1060" cy="370" r="16" stroke="#3776AB" />
+              <circle class="station__dot" cx="1060" cy="370" r="8" fill="#3776AB" />
+              <text class="station__label" x="1060" y="354">Projects</text>
+              <text class="station__time" x="1060" y="387" fill="#3776AB">Wk 11+</text>
             </g>
 
-            <!-- ── VIZ + STATS LINE stations ──── -->
+            <!-- ── VIZ + STATS LINE stations (now row 3) ──── -->
             <g class="station" data-station="v1" tabindex="0" role="button" aria-label="Tableau or Power BI">
-              <circle class="station__ring" cx="880" cy="370" r="16" stroke="#7C3AED" />
-              <circle class="station__dot" cx="880" cy="370" r="8" fill="#7C3AED" />
-              <text class="station__label" x="880" y="355">Tableau / Power BI</text>
-              <text class="station__time" x="880" y="387" fill="#7C3AED">Wk 9–13</text>
+              <circle class="station__ring" cx="730" cy="285" r="16" stroke="#7C3AED" />
+              <circle class="station__dot" cx="730" cy="285" r="8" fill="#7C3AED" />
+              <text class="station__label" x="730" y="270">Tableau / Power BI</text>
+              <text class="station__time" x="730" y="302" fill="#7C3AED">Wk 9–13</text>
             </g>
 
-            <!-- Branch node Viz → Career -->
+            <!-- Branch node Viz → Python -->
             <g class="station station--transfer" data-station="v2" tabindex="0" role="button"
-              aria-label="Statistics — branches to Career">
-              <circle class="station__ring" cx="970" cy="370" r="20" stroke="#7C3AED" />
-              <circle class="station__dot" cx="970" cy="370" r="11" fill="#7C3AED" />
-              <text class="station__label" x="970" y="354">Statistics</text>
-              <text class="station__time" x="970" y="388" fill="#7C3AED">Wk 10–13 ⇒ Career</text>
+              aria-label="Statistics — branches to Python">
+              <circle class="station__ring" cx="840" cy="285" r="20" stroke="#7C3AED" />
+              <circle class="station__dot" cx="840" cy="285" r="11" fill="#7C3AED" />
+              <text class="station__label" x="840" y="270">Statistics</text>
+              <text class="station__time" x="840" y="302" fill="#7C3AED">Wk 10–13 ⇒ Python</text>
             </g>
 
             <g class="station" data-station="v3" tabindex="0" role="button" aria-label="Data Storytelling">
-              <circle class="station__ring" cx="1060" cy="370" r="16" stroke="#7C3AED" />
-              <circle class="station__dot" cx="1060" cy="370" r="8" fill="#7C3AED" />
-              <text class="station__label" x="1060" y="354">Storytelling</text>
-              <text class="station__time" x="1060" y="387" fill="#7C3AED">Wk 12–15</text>
+              <circle class="station__ring" cx="940" cy="285" r="16" stroke="#7C3AED" />
+              <circle class="station__dot" cx="940" cy="285" r="8" fill="#7C3AED" />
+              <text class="station__label" x="940" y="270">Storytelling</text>
+              <text class="station__time" x="940" y="302" fill="#7C3AED">Wk 12–15</text>
             </g>
 
             <!-- ── CAREER LINE stations ────────── -->
@@ -369,12 +369,12 @@
         <span class="legend__text" style="color:#1E40AF">SQL</span>
       </div>
       <div class="legend__item">
-        <div class="legend__line" style="background:#3776AB;"></div>
-        <span class="legend__text" style="color:#3776AB">Python</span>
-      </div>
-      <div class="legend__item">
         <div class="legend__line" style="background:#7C3AED;"></div>
         <span class="legend__text" style="color:#7C3AED">Viz + Stats</span>
+      </div>
+      <div class="legend__item">
+        <div class="legend__line" style="background:#3776AB;"></div>
+        <span class="legend__text" style="color:#3776AB">Python</span>
       </div>
       <div class="legend__item">
         <div class="legend__line" style="background:#7622D7;"></div>

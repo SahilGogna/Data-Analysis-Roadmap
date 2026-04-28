@@ -178,7 +178,7 @@ ul { list-style: none; }
 
 .map-scroll {
   overflow-x: auto;
-  overflow-y: hidden;
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   scrollbar-color: rgba(118,34,215,0.25) transparent;
@@ -606,4 +606,9 @@ ul { list-style: none; }
   .nav .nav__title { display: none; }
   .map-header h1 { font-size: 22px; }
   .modal-card { padding: 20px 20px 24px; }
+}
+
+@media (max-height: 820px) {
+  .map-header { padding: 20px 40px 16px; }
+  .footer { padding: 16px 40px; }
 }
