@@ -171,13 +171,16 @@ ul { list-style: none; }
 ═══════════════════════════════════════════ */
 .map-area {
   flex: 1;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
   padding: 8px 40px 24px;
   overflow: hidden;
 }
 
 .map-scroll {
-  height: 100%;
+  flex: 1;
+  min-height: 0;
   overflow-x: auto;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
