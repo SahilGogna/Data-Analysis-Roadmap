@@ -177,13 +177,14 @@ ul { list-style: none; }
 }
 
 .map-scroll {
+  height: 100%;
   overflow-x: auto;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   scrollbar-color: rgba(118,34,215,0.25) transparent;
 }
-.map-scroll::-webkit-scrollbar { height: 4px; }
+.map-scroll::-webkit-scrollbar { height: 4px; width: 4px; }
 .map-scroll::-webkit-scrollbar-track { background: transparent; }
 .map-scroll::-webkit-scrollbar-thumb { background: rgba(118,34,215,0.25); border-radius: 2px; }
 
